@@ -1,0 +1,24 @@
+{% load bootstrap3 %}
+<head>
+    <meta charset="UTF-8">
+    <title>The Title</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+
+{% if messages %}
+  <ul class="messages">
+    {% for message in messages %}
+      <li class="{{ message.tags }}">{{ message }}</li>
+    {% endfor %}
+  </ul>
+{% endif %}
+
+<div class="container">
+    <h3>Number to words convertion</h3>
+    <br>
+    <form action="" method="post">
+        {% csrf_token %}
+        {% bootstrap_form form %}
+        <input type="submit" class="btn btn-success btn-md" value="Convert">
+    </form>
+</div>y
