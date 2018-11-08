@@ -2,11 +2,14 @@ from core import dicts
 
 
 def convert_number_to_words(number):
-    if int(number) == 0:
+    if number == 0:
         return dicts.ZERO
 
     words = []
-    number = number.lstrip('0')
+    if number < 0:
+        words.append('minus')
+        number = str(number)[1:]
+    number = str(number)
 
     if len(number) % 3 is not 0:
         for i in range(0, 3-len(number) % 3):
@@ -45,11 +48,25 @@ def convert_number_to_words(number):
 
 
 def split_list(list_of_digits, size):
+    """
+    :param list_of_digits: number converted to list of digits
+    :param size: size of a chunk
+    :return: digits divided into chunks of selected size
+    ex. list of digits=[1, 2, 3, 4, 5, 6, 7, 8, 9], size=3
+    result = [1, 2, 3], [4, 5, 6], [7, 8, 9]
+    """
     for i in range(0, len(list_of_digits), size):
         yield list_of_digits[i:i + size]
 
 
 def number_form(number):
+    """
+    :param number: number as int
+    :return: index of correct word form of number from tuple in dict
+    ex. when result = 1
+    dicts.THOUSANDS[2][result] == 'miliony'
+    dicts.THOUSANDS[1][result] == 'tysiące'
+    """
     if number == 1:
         return 0
     elif 1 < number % 10 < 5 and number % 100 not in [12, 13, 14]:

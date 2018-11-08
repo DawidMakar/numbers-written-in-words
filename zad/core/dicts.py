@@ -33,7 +33,7 @@ TWENTIES = {
     6: 'sześćdziesiąt',
     7: 'siedemdziesiąt',
     8: 'osiemdziesiąt',
-    9: 'dziewięćdziesiąt', # !
+    9: 'dziewięćdziesiąt',
 }
 
 HUNDREDS = {
@@ -45,7 +45,7 @@ HUNDREDS = {
     6: 'sześćset',
     7: 'siedemset',
     8: 'osiemset',
-    9: 'dziewięćset', # !!
+    9: 'dziewięćset',
 }
 
 THOUSANDS = {

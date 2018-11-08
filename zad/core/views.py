@@ -1,4 +1,3 @@
-from django.contrib import messages
 from django.http import HttpResponseRedirect
 from django.urls import reverse_lazy
 from django.views.generic import FormView, TemplateView
@@ -13,12 +12,8 @@ class NumberToWordsView(FormView):
     template_name = 'number_to_words.html'
     success_url = reverse_lazy('result')
 
-    def post(self, request, *args, **kwargs):
-        super().post(request, *args, **kwargs)
-        number = self.request.POST.get('number')
-        if number == '':
-            messages.error(request, 'Something went wrong!')
-            return HttpResponseRedirect(reverse_lazy('number_to_words'))
+    def form_valid(self, form):
+        number = form.cleaned_data['number']
         result = convert_number_to_words(number)
         return HttpResponseRedirect(f"{reverse_lazy('result')}?res={result}")
 
