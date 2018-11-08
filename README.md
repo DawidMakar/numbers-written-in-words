@@ -12,15 +12,15 @@ Required packages:
 
 ```
 git clone https://github.com/DawidMakar/numbers-written-in-words.git
-cd number-written-in-words
-docker-compose up --build
+cd numbers-written-in-words
+docker-compose up -d --build
 ```
 
 ## Running the tests
 
 1. While docker container is up, run following command to access app terminal:
 ```
-docker exec -it zadanie_zpr2_web_1 /bin/bash
+docker exec -it numbers-written-in-words_web_1 /bin/bash
 ```
 2. Run 'test' command:
 ```
