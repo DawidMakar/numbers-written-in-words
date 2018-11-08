@@ -34,7 +34,7 @@ Example:
 ```
 def test_thousands(self):
     # (...)
-    self.assertEqual(convert_number_to_words('145712'),
+    self.assertEqual(convert_number_to_words(145712),
                      'sto czterdzieści pięć tysięcy siedemset dwanaście')
 ```
 
@@ -48,4 +48,4 @@ def test_thousands(self):
 
 * **Dawid Makar** - *Initial work* - [DawidMakar](https://github.com/DawidMakar)
 
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
+See also the list of [contributors](https://github.com/DawidMakar/numbers-written-in-words/contributors) who participated in this project.
