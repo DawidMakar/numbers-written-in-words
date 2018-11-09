@@ -10,7 +10,6 @@ class NumberToWordsView(FormView):
 
     form_class = NumberToWordsForm
     template_name = 'number_to_words.html'
-    success_url = reverse_lazy('result')
 
     def form_valid(self, form):
         number = form.cleaned_data['number']
